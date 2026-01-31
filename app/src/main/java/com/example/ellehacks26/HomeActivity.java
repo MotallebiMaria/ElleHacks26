@@ -10,8 +10,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class HomeActivity extends BaseActivity {
     private Fragment dashboardFragment;
     private Fragment stocksFragment;
-    private Fragment creditFragment;
-    private Fragment JobFragment;
+    private Fragment creditCardFragment;
+    private Fragment lessonFragment;
     protected BottomNavigationView bottomNavigationView;
 
     @Override
@@ -33,21 +33,23 @@ public class HomeActivity extends BaseActivity {
 //        else if (item.getItemId() == R.id.stocks) {
 //            setCurrentFragment(stocksFragment);
 //            return true;
-//        } else if (item.getItemId() == R.id.credit) {
-//            setCurrentFragment(creditFragment);
-//            return true;
-//        } else if (item.getItemId() == R.id.job) {
-//            setCurrentFragment(jobFragment);
-//            return true;
 //        }
+        else if (item.getItemId() == R.id.credit) {
+            setCurrentFragment(creditCardFragment);
+            return true;
+        }
+        else if (item.getItemId() == R.id.job) {
+            setCurrentFragment(lessonFragment);
+            return true;
+        }
         return false;
     }
 
     protected void initializeFragments() {
         dashboardFragment = new DashboardFragment();
-//        dashboardFragment = new StocksFragment();
-//        dashboardFragment = new CreditFragment();
-//        dashboardFragment = new JobFragment();
+//        stocksFragment = new StocksFragment();
+        creditCardFragment = new CreditCardFragment();
+        lessonFragment = new LessonFragment();
     }
 
     public void setCurrentFragment(Fragment fragment) {
