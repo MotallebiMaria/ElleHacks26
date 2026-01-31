@@ -1,8 +1,25 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.gms.google-services")
 }
 
+// Load local.properties
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(localPropertiesFile.inputStream())
+}
+
+// Get Gemini API key
+val geminiApiKey = localProperties.getProperty("GEMINI_API_KEY")
+
 android {
+
+    buildFeatures {
+        buildConfig = true
+    }
     namespace = "com.example.ellehacks26"
     compileSdk {
         version = release(36)
@@ -16,6 +33,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Use geminiApiKey here
+        buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
     }
 
     buildTypes {
@@ -27,6 +47,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -42,4 +63,5 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation(platform("com.google.firebase:firebase-bom:34.8.0"))
 }
