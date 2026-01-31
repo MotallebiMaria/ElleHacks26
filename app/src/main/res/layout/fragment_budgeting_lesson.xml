@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+
+            android:layout_marginBottom="24dp"
+            android:outlineProvider="background"
+            android:clipToOutline="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="24dp"
+                android:layout_marginBottom="24dp"
+                android:outlineProvider="background"
+                android:clipToOutline="true">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/money"
+                    android:layout_marginRight="20dp"/>
+
+
+                <TextView
+                    android:id="@+id/lessonTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="8dp"
+                    android:shadowRadius="2"
+                    android:text="Budgeting"
+                    android:textColor="#3C0366"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/subtopicTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="#A6E3FF"
+                android:text="Lesson 1: Planning Your Money"
+                android:textColor="#1565C0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:drawablePadding="8dp"
+                android:layout_gravity="center_horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_marginBottom="16dp"
+                android:outlineProvider="bounds">
+
+                <TextView
+                    android:id="@+id/lessonContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A budget is a plan for how you will use your money. It helps you decide how much to spend, save, and share. For example, if you get $20, you might budget $10 for spending, $5 for saving, and $5 for gifts or charity. A budget helps you make sure your money doesn’t run out too fast."
+                    android:textSize="18sp"
+                    android:textColor="#5D4037"
+                    android:lineSpacingExtra="6dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="#FF6B9D"
+            android:backgroundTint="#FF6B9D"
+            android:drawablePadding="12dp"
+            android:letterSpacing="0.15"
+            android:padding="0dp"
+            android:stateListAnimator="@null"
+            android:text="NEXT"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#76C4FF"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="40dp" />
+
+    </LinearLayout>
+</ScrollView>
