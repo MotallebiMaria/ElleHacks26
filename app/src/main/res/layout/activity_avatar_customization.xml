@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Preview -->
+        <com.example.ellehacks26.avatar.AvatarView
+            android:id="@+id/avatarView"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Skin Color Section -->
+        <TextView
+            android:id="@+id/skinColorTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skin Color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <GridView
+            android:id="@+id/skinColorGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:horizontalSpacing="8dp"
+            android:verticalSpacing="8dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Hair Style Section -->
+        <TextView
+            android:id="@+id/hairStyleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hair Style"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <GridView
+            android:id="@+id/hairStyleGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:horizontalSpacing="8dp"
+            android:verticalSpacing="8dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Hair Color Section -->
+        <TextView
+            android:id="@+id/hairColorTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hair Color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <GridView
+            android:id="@+id/hairColorGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:horizontalSpacing="8dp"
+            android:verticalSpacing="8dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Accessory Section -->
+        <TextView
+            android:id="@+id/accessoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accessories"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <GridView
+            android:id="@+id/accessoryGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:horizontalSpacing="8dp"
+            android:verticalSpacing="8dp"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save Avatar"
+            android:layout_gravity="center"
+            android:padding="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
