@@ -58,7 +58,40 @@ public class LessonFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lesson_page, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_lesson_page, container, false);
+
+        View creditCard = view.findViewById(R.id.credit_card_tile);
+
+        creditCard.setOnClickListener(v -> {
+            requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.changeFragments, new CreditCardLesson())
+                    .addToBackStack(null)
+                    .commit();
+        });
+
+        View stocksCard = view.findViewById(R.id.stocks_tile);
+        stocksCard.setOnClickListener(v -> {
+            requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.changeFragments, new StocksLesson())
+                    .addToBackStack(null)
+                    .commit();
+        });
+
+        View budgetcard = view.findViewById(R.id.budget_tile);
+        budgetcard.setOnClickListener(v -> {
+            requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.changeFragments, new BudgetingLesson())
+                    .addToBackStack(null)
+                    .commit();
+        });
+
+        return view;
     }
 }

@@ -57,6 +57,7 @@
             <!-- Credit Cards Card -->
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
+                android:id="@+id/credit_card_tile"
                 android:layout_height="120dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
@@ -107,6 +108,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:id="@+id/stocks_tile"
                     android:orientation="vertical"
                     android:background="@drawable/border"
                     android:gravity="center"
@@ -148,6 +150,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:id="@+id/budget_tile"
                     android:orientation="vertical"
                     android:background="@drawable/border"
                     android:gravity="center"
