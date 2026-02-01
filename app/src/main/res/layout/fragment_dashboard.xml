@@ -29,6 +29,7 @@
 
 
             <TextView
+                android:id="@+id/textGreeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hello User"
@@ -102,7 +103,8 @@
                     android:paddingStart="12dp">
 
                     <TextView
-                        android:text="Happiness"
+                        android:id="@+id/textEnergyLabel"
+                        android:text="Energy"
                         android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="#212121"
@@ -117,6 +119,7 @@
                         android:gravity="center_vertical">
 
                         <ProgressBar
+                            android:id="@+id/progressEnergy"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -125,6 +128,7 @@
                             android:progress="70" />
 
                         <TextView
+                            android:id="@+id/textEnergyValue"
                             android:text="70%"
                             android:layout_marginStart="8dp"
                             android:textStyle="bold"
@@ -160,10 +164,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingStart="12dp">
 
                     <TextView
+                        android:id="@+id/textMoneyLabel"
                         android:text="Money"
                         android:textStyle="bold"
                         android:textSize="14sp"
@@ -178,16 +183,9 @@
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
 
-                        <ProgressBar
-                            style="?android:attr/progressBarStyleHorizontal"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="8dp"
-                            android:max="100"
-                            android:progress="40" />
-
                         <TextView
-                            android:text="40%"
+                            android:id="@+id/textMoneyValue"
+                            android:text="$40"
                             android:layout_marginStart="8dp"
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
@@ -225,7 +223,8 @@
                     android:paddingStart="12dp">
 
                     <TextView
-                        android:text="Credit"
+                        android:id="@+id/textCreditLabel"
+                        android:text="Credit Card Usage"
                         android:textStyle="bold"
                         android:textSize="14sp"
                         android:textColor="#212121"
@@ -240,6 +239,7 @@
                         android:gravity="center_vertical">
 
                         <ProgressBar
+                            android:id="@+id/progressCredit"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="0dp"
                             android:layout_weight="1"
@@ -248,6 +248,7 @@
                             android:progress="10" />
 
                         <TextView
+                            android:id="@+id/textCreditValue"
                             android:text="10%"
                             android:layout_marginStart="8dp"
                             android:textStyle="bold"
