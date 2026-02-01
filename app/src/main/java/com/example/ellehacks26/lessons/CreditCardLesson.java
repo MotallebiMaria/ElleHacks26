@@ -1,4 +1,4 @@
-package com.example.ellehacks26;
+package com.example.ellehacks26.lessons;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.ellehacks26.R;
 
 public class CreditCardLesson extends Fragment {
 
@@ -45,28 +47,31 @@ public class CreditCardLesson extends Fragment {
 
         Button nextButton = view.findViewById(R.id.nextButton);
 
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        nextButton.setOnClickListener(v -> {
+            // prep lesson content to pass to quiz
+            Bundle args = new Bundle();
+            args.putString("lesson_content", getLessonContent());
+            args.putString("topic", getTopic()); // "Credit Cards", "Budgeting", "Stocks"
 
-                // Create an instance of the fragment you want to navigate to
-                Fragment quizFragment = QuizQuestionsFragment.newInstance(R.layout.layout_credit_card_quiz);
+            Fragment quizFragment = new CreditCardQuizFragment();
 
-                // Begin the fragment transaction
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            quizFragment.setArguments(args);
 
-                // Replace the current fragment with the new one
-                transaction.replace(R.id.changeFragments, quizFragment);
-                // Make sure R.id.fragment_container is the ID of your FrameLayout or container in your activity
-
-                // Optional: add to back stack so user can press back
-                transaction.addToBackStack(null);
-
-                // Commit the transaction
-                transaction.commit();
-            }
+            getParentFragmentManager().beginTransaction()
+                    .replace(R.id.changeFragments, quizFragment)
+                    .addToBackStack(null)
+                    .commit();
         });
 
         return view;
+    }
+
+    private String getLessonContent() {
+        // extract text from lesson - HARDCODED!!! need to store in strings.xml later
+        return "A credit card lets you buy things even if you don't have the money right now. For example, you might use it to buy a video game or school supplies. The bank pays for it first, and then you promise to pay the bank back within a limited time. Using a credit card responsibly can be helpful, but spending more than you can pay back can lead to debt which means you owe money and have to pay it back later, sometimes with extra fees called interest.";
+    }
+
+    private String getTopic() {
+        return "Credit Cards";
     }
 }

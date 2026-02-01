@@ -4,6 +4,7 @@ import android.util.Log;
 import android.util.Patterns;
 
 import com.example.ellehacks26.models.User;
+import com.example.ellehacks26.utils.StoryManager;
 import com.example.ellehacks26.utils.UserManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -16,6 +17,7 @@ public class AuthPresenter implements AuthContract.Presenter {
     private final FirebaseAuth auth;
     private final FirebaseFirestore db;
     private final Pattern emailPattern;
+    private final StoryManager storyManager;
 
     public AuthPresenter(AuthContract.View view) {
         this(view, FirebaseAuth.getInstance(), FirebaseFirestore.getInstance());
@@ -30,6 +32,7 @@ public class AuthPresenter implements AuthContract.Presenter {
         this.auth = auth;
         this.db = firestore;
         this.emailPattern = emailPattern;
+        this.storyManager = StoryManager.getInstance();
     }
 
     @Override
@@ -107,8 +110,20 @@ public class AuthPresenter implements AuthContract.Presenter {
                 .set(user.toMap())
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        view.showSuccess("Registration successful");
-                        loadUserAndNavigate(userId);
+                        storyManager.initializeUserStory(userId, new StoryManager.StoryCallback() {
+                            @Override
+                            public void onSuccess() {
+                                view.showSuccess("Registration successful");
+                                loadUserAndNavigate(userId);
+                            }
+
+                            @Override
+                            public void onError(String error) {
+                                Log.w("AuthPresenter", "Failed to initialize story: " + error);
+                                view.showSuccess("Registration successful (story setup incomplete)");
+                                loadUserAndNavigate(userId);
+                            }
+                        });
                     } else {
                         view.showError("Failed to save user data");
                     }

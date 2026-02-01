@@ -5,6 +5,9 @@ import android.view.MenuItem;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.ellehacks26.lessons.LessonFragment;
+import com.example.ellehacks26.models.User;
+import com.example.ellehacks26.utils.UserManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends BaseActivity {
@@ -13,16 +16,38 @@ public class HomeActivity extends BaseActivity {
     private Fragment creditCardFragment;
     private Fragment lessonFragment;
     protected BottomNavigationView bottomNavigationView;
+    private String userId;
+    private User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        userId = getIntent().getStringExtra("USER_ID");
         bottomNavigationView = findViewById(R.id.NavBottom);
         bottomNavigationView.setItemIconTintList(null);
         bottomNavigationView.setOnItemSelectedListener(this::fragmentChange);
-        initializeFragments();
-        setCurrentFragment(dashboardFragment);
+
+        loadUser();
+    }
+
+    private void loadUser() {
+        UserManager userManager = new UserManager();
+        userManager.getUserById(userId, new UserManager.UserCallback() {
+            @Override
+            public void onUserLoaded(User user) {
+                currentUser = user;
+                initializeFragments();
+                setCurrentFragment(dashboardFragment);
+            }
+
+            @Override
+            public void onError(String error) {
+                // TODO: toast message maybe?? handle better
+                initializeFragments();
+                setCurrentFragment(dashboardFragment);
+            }
+        });
     }
 
     protected boolean fragmentChange(MenuItem item) {
@@ -46,7 +71,7 @@ public class HomeActivity extends BaseActivity {
     }
 
     protected void initializeFragments() {
-        dashboardFragment = new DashboardFragment();
+        dashboardFragment = DashboardFragment.newInstance(userId);
 //        stocksFragment = new StocksFragment();
         creditCardFragment = new CreditCardFragment();
         lessonFragment = new LessonFragment();
