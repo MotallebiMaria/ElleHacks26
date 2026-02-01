@@ -66,11 +66,15 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
+    implementation(libs.firebase.crashlytics.buildtools)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation("com.google.code.gson:gson:2.10.1")
     implementation(platform("com.google.firebase:firebase-bom:34.8.0"))
+
+    implementation("org.json:json:20230227")
+
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.google.ai.client.generativeai:generativeai:0.3.0")
 }

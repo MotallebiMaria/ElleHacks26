@@ -12,8 +12,9 @@
         android:layout_marginTop="50dp"
         android:padding="16dp">
 
-        <!-- Continue Story Tile -->
+        <!-- Story Scenario Card -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/story_card"
             android:layout_width="match_parent"
             android:layout_height="290dp"
             android:layout_marginBottom="24dp"
@@ -27,28 +28,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:background="@drawable/border_2"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/border_2">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Story Text"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
+                    android:id="@+id/scenario_text"
+                    android:layout_width="360dp"
+                    android:layout_height="260dp"
+                    android:gravity="center"
+                    android:text="Loading story..."
+                    android:textColor="@color/black"
+                    android:textSize="19sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/story_text"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="20dp"
-            android:layout_marginBottom="30dp"
-            android:text="What should you do next?">
+            android:layout_height="wrap_content"
+            android:text="What should you do next?"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="30dp" />
 
-        </TextView>
-
+        <!-- Decisions -->
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,111 +62,164 @@
 
             <!-- Decision 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/decision_card1"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
+                android:minHeight="140dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
-                app:cardUseCompatPadding="true"
-                app:cardPreventCornerOverlap="false">
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
+                    android:id="@+id/decision_layout1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:padding="25dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/choice_text1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Decision"
+                        android:gravity="center"
+                        android:text="Choice 1 loading..."
                         android:textStyle="bold"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textColor="#212121" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Decision 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/decision_card2"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
+                android:minHeight="140dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
-                app:cardUseCompatPadding="true"
-                app:cardPreventCornerOverlap="false">
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
+                    android:id="@+id/decision_layout2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:padding="25dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/choice_text2"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Decision"
+                        android:gravity="center"
+                        android:text="Choice 2 loading..."
                         android:textStyle="bold"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textColor="#212121" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Decision 3 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/decision_card3"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
+                android:minHeight="140dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
-                app:cardUseCompatPadding="true"
-                app:cardPreventCornerOverlap="false">
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
+                    android:id="@+id/decision_layout3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:padding="25dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/choice_text3"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Decision"
+                        android:gravity="center"
+                        android:text="Choice 3 loading..."
                         android:textStyle="bold"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textColor="#212121" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Decision 4 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/decision_card4"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
+                android:minHeight="140dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
-                app:cardUseCompatPadding="true"
-                app:cardPreventCornerOverlap="false">
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
+                    android:id="@+id/decision_layout4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:padding="25dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/choice_text4"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Decision"
+                        android:gravity="center"
+                        android:text="Choice 4 loading..."
                         android:textStyle="bold"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textColor="#212121" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
         </GridLayout>
+
+        <Button
+            android:id="@+id/choose_button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="104dp"
+            android:text="Choose"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            android:backgroundTint="#7E57C2"
+            android:elevation="4dp" />
+
+        <!-- Add a loading indicator -->
+        <ProgressBar
+            android:id="@+id/loading_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="gone" />
+
     </LinearLayout>
 </ScrollView>
