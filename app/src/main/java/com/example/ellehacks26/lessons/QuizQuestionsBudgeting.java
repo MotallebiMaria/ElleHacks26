@@ -1,4 +1,4 @@
-package com.example.ellehacks26;
+package com.example.ellehacks26.lessons;
 
 import android.os.Bundle;
 
@@ -9,7 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
+
+import com.example.ellehacks26.R;
 
 /**
  * A reusable fragment for quizzes.
