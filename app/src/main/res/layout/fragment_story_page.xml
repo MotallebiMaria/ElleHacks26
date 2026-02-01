@@ -12,8 +12,9 @@
         android:layout_marginTop="50dp"
         android:padding="16dp">
 
-        <!-- Continue Story Tile -->
+        <!-- Story Scenario Card -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/story_card"
             android:layout_width="match_parent"
             android:layout_height="290dp"
             android:layout_marginBottom="24dp"
@@ -31,10 +32,11 @@
                 android:background="@drawable/border_2">
 
                 <TextView
+                    android:id="@+id/scenario_text"
                     android:layout_width="360dp"
                     android:layout_height="260dp"
                     android:gravity="center"
-                    android:text="You're walking home from school when you see your friend Alex setting up a lemonade stand. They look frustrated because their ice melted and now the lemonade is warm. 'My mom said I could keep all the money I make today, but nobody wants warm lemonade!' Alex says. 'I need $2 for more ice from the store across the street, but I spent all my allowance.' Alex looks at you hopefully."
+                    android:text="Loading story..."
                     android:textColor="@color/black"
                     android:textSize="19sp"
                     android:textStyle="bold" />
@@ -60,7 +62,7 @@
 
             <!-- Decision 1 -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/decision1"
+                android:id="@+id/decision_card1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:minHeight="140dp"
@@ -70,7 +72,7 @@
                 app:cardUseCompatPadding="true">
 
                 <LinearLayout
-                    android:id="@+id/decision1_layout"
+                    android:id="@+id/decision_layout1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
@@ -81,10 +83,11 @@
                     android:focusable="true">
 
                     <TextView
+                        android:id="@+id/choice_text1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="I'll lend you $2 from my savings! We can split the profits 50/50"
+                        android:text="Choice 1 loading..."
                         android:textStyle="bold"
                         android:textSize="15sp"
                         android:textColor="#212121" />
@@ -93,7 +96,7 @@
 
             <!-- Decision 2 -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/decision2"
+                android:id="@+id/decision_card2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:minHeight="140dp"
@@ -103,7 +106,7 @@
                 app:cardUseCompatPadding="true">
 
                 <LinearLayout
-                    android:id="@+id/decision2_layout"
+                    android:id="@+id/decision_layout2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
@@ -114,10 +117,11 @@
                     android:focusable="true">
 
                     <TextView
+                        android:id="@+id/choice_text2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="I'll use my $2 to buy the ice myself and run my OWN stand next to yours"
+                        android:text="Choice 2 loading..."
                         android:textStyle="bold"
                         android:textSize="15sp"
                         android:textColor="#212121" />
@@ -126,7 +130,7 @@
 
             <!-- Decision 3 -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/decision3"
+                android:id="@+id/decision_card3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:minHeight="140dp"
@@ -136,7 +140,7 @@
                 app:cardUseCompatPadding="true">
 
                 <LinearLayout
-                    android:id="@+id/decision3_layout"
+                    android:id="@+id/decision_layout3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
@@ -147,10 +151,11 @@
                     android:focusable="true">
 
                     <TextView
+                        android:id="@+id/choice_text3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="I should save my money. Maybe I'll just buy a cup for $1 to be nice"
+                        android:text="Choice 3 loading..."
                         android:textStyle="bold"
                         android:textSize="15sp"
                         android:textColor="#212121" />
@@ -159,7 +164,7 @@
 
             <!-- Decision 4 -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/decision4"
+                android:id="@+id/decision_card4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:minHeight="140dp"
@@ -169,7 +174,7 @@
                 app:cardUseCompatPadding="true">
 
                 <LinearLayout
-                    android:id="@+id/decision4_layout"
+                    android:id="@+id/decision_layout4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
@@ -180,10 +185,11 @@
                     android:focusable="true">
 
                     <TextView
+                        android:id="@+id/choice_text4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="I don't have money to help, but I have energy! I'll run to the store and ask if they'll donate ice for good publicity"
+                        android:text="Choice 4 loading..."
                         android:textStyle="bold"
                         android:textSize="15sp"
                         android:textColor="#212121" />
@@ -205,6 +211,15 @@
             android:textColor="@color/purple"
             android:backgroundTint="#7E57C2"
             android:elevation="4dp" />
+
+        <!-- Add a loading indicator -->
+        <ProgressBar
+            android:id="@+id/loading_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="gone" />
 
     </LinearLayout>
 </ScrollView>

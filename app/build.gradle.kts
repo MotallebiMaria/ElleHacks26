@@ -71,4 +71,5 @@ dependencies {
 
     implementation("com.google.ai.client.generativeai:generativeai:0.1.2")
     implementation("org.json:json:20230227")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
 }
