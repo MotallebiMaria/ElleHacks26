@@ -66,6 +66,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/play"
                     android:layout_width="57dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="15dp"

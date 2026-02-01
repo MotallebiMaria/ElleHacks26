@@ -27,28 +27,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:background="@drawable/border_2"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/border_2">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Story Text"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
+                    android:layout_width="360dp"
+                    android:layout_height="260dp"
+                    android:gravity="center"
+                    android:text="You're walking home from school when you see your friend Alex setting up a lemonade stand. They look frustrated because their ice melted and now the lemonade is warm. 'My mom said I could keep all the money I make today, but nobody wants warm lemonade!' Alex says. 'I need $2 for more ice from the store across the street, but I spent all my allowance.' Alex looks at you hopefully."
+                    android:textColor="@color/black"
+                    android:textSize="19sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/story_text"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="20dp"
-            android:layout_marginBottom="30dp"
-            android:text="What should you do next?">
+            android:layout_height="wrap_content"
+            android:text="What should you do next?"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="30dp" />
 
-        </TextView>
-
+        <!-- Decisions -->
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,111 +60,151 @@
 
             <!-- Decision 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/decision1"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
+                android:minHeight="140dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
-                app:cardUseCompatPadding="true"
-                app:cardPreventCornerOverlap="false">
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
+                    android:id="@+id/decision1_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:padding="25dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Decision"
+                        android:gravity="center"
+                        android:text="I'll lend you $2 from my savings! We can split the profits 50/50"
                         android:textStyle="bold"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textColor="#212121" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Decision 2 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/decision2"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
+                android:minHeight="140dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
-                app:cardUseCompatPadding="true"
-                app:cardPreventCornerOverlap="false">
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
+                    android:id="@+id/decision2_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:padding="25dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Decision"
+                        android:gravity="center"
+                        android:text="I'll use my $2 to buy the ice myself and run my OWN stand next to yours"
                         android:textStyle="bold"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textColor="#212121" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Decision 3 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/decision3"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
+                android:minHeight="140dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
-                app:cardUseCompatPadding="true"
-                app:cardPreventCornerOverlap="false">
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
+                    android:id="@+id/decision3_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:padding="25dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Decision"
+                        android:gravity="center"
+                        android:text="I should save my money. Maybe I'll just buy a cup for $1 to be nice"
                         android:textStyle="bold"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textColor="#212121" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Decision 4 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/decision4"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
+                android:minHeight="140dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
-                app:cardUseCompatPadding="true"
-                app:cardPreventCornerOverlap="false">
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
+                    android:id="@+id/decision4_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/border"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:padding="25dp"
+                    android:orientation="vertical"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Decision"
+                        android:gravity="center"
+                        android:text="I don't have money to help, but I have energy! I'll run to the store and ask if they'll donate ice for good publicity"
                         android:textStyle="bold"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textColor="#212121" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
         </GridLayout>
+
+        <Button
+            android:id="@+id/choose_button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="104dp"
+            android:text="Choose"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            android:backgroundTint="#7E57C2"
+            android:elevation="4dp" />
+
     </LinearLayout>
 </ScrollView>
