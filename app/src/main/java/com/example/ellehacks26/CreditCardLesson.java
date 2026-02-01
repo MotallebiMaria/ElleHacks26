@@ -1,32 +1,47 @@
 package com.example.ellehacks26;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 
-/**
- * Fragment for the Budgeting Lesson using reusable header + dynamic content.
- */
-public class BudgetingLesson extends Fragment {
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-    public BudgetingLesson() {}
+public class CreditCardLesson extends Fragment {
 
-    public static BudgetingLesson newInstance() {
-        return new BudgetingLesson();
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+    private String mParam1;
+    private String mParam2;
+
+    public CreditCardLesson() {
+        // Required empty public constructor
+    }
+
+    public static CreditCardLesson newInstance(String param1, String param2) {
+        CreditCardLesson fragment = new CreditCardLesson();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_budgeting_lesson, container, false);
+        View view = inflater.inflate(R.layout.fragment_credit_card_lesson, container, false);
 
         Button nextButton = view.findViewById(R.id.nextButton);
 
@@ -35,7 +50,7 @@ public class BudgetingLesson extends Fragment {
             public void onClick(View v) {
 
                 // Create an instance of the fragment you want to navigate to
-                Fragment quizFragment = QuizQuestionsBudgeting.newInstance(R.layout.layout_budgeting_quiz);
+                Fragment quizFragment = QuizQuestionsFragment.newInstance(R.layout.layout_credit_card_quiz);
 
                 // Begin the fragment transaction
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
