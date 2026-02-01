@@ -16,14 +16,16 @@ public class User {
     protected int currentStoryNumber;
     protected double debtAmount;  // credit card debt
     protected Set<String> completedLessons;  // lesson IDs that user has completed
+    protected StoryEntry currentStory;
 
     // default constructor for Firestore
     public User() {
         this.completedLessons = new HashSet<>();
-        this.money = 100.0;  // starting money
+        this.money = 10.0;  // starting money
         this.energy = 100;   // starting energy
         this.currentStoryNumber = 1;
         this.debtAmount = 0.0;
+        this.currentStory = null;
     }
 
     public User(String email) {
@@ -40,6 +42,9 @@ public class User {
 
     public String getDisplayName() { return displayName; }
     public void setDisplayName(String displayName) { this.displayName = displayName; }
+
+    public StoryEntry getCurrentStory() { return currentStory; }
+    public void setCurrentStory(StoryEntry currentStory) { this.currentStory = currentStory; }
 
     public double getMoney() { return money; }
     public void setMoney(double money) { this.money = money; }
@@ -83,6 +88,10 @@ public class User {
         map.put("currentStoryNumber", currentStoryNumber);
         map.put("debtAmount", debtAmount);
         map.put("completedLessons", completedLessons != null ? new ArrayList<>(completedLessons) : new ArrayList<>());
+
+        if (currentStory != null) map.put("currentStory", currentStory.toMap());
+        else map.put("currentStory", null);
+
         return map;
     }
 
@@ -133,6 +142,19 @@ public class User {
         if (lessonsObj instanceof List) {
             Set<String> lessonsSet = new HashSet<>((List<String>) lessonsObj);
             user.setCompletedLessons(lessonsSet);
+        }
+
+        Object currentStoryObj = map.get("currentStory");
+        if (currentStoryObj instanceof Map) {
+            try {
+                @SuppressWarnings("unchecked")
+                Map<String, Object> storyMap = (Map<String, Object>) currentStoryObj;
+                StoryEntry storyEntry = StoryEntry.fromMap(storyMap);
+                user.setCurrentStory(storyEntry);
+            } catch (Exception e) {
+                // log error but don't crash
+                e.printStackTrace();
+            }
         }
 
         return user;
